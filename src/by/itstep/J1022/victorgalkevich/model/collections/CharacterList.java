@@ -4,6 +4,7 @@ import by.itstep.J1022.victorgalkevich.model.entities.abstractLayer.characters.C
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.Objects;
 
@@ -77,6 +78,16 @@ public class CharacterList<T extends CharacterInGame> extends AbstractCharacterL
             System.arraycopy(list, index + 1, newList, index, size - index);
         }
         this.list = newList;
+    }
+
+    @Override
+    public void sort() {
+        Arrays.sort(this.list);
+    }
+
+    @Override
+    public void sort(Comparator<T> comparator) {
+        Arrays.sort((T[]) this.list, comparator);
     }
 
     @NotNull

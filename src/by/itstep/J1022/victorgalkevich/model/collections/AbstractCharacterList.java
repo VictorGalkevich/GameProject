@@ -2,6 +2,8 @@ package by.itstep.J1022.victorgalkevich.model.collections;
 
 import by.itstep.J1022.victorgalkevich.model.entities.abstractLayer.characters.CharacterInGame;
 
+import java.util.Comparator;
+
 
 public abstract class AbstractCharacterList<T extends CharacterInGame> implements Iterable<T>{
     public abstract void add(T character);
@@ -19,4 +21,7 @@ public abstract class AbstractCharacterList<T extends CharacterInGame> implement
     public abstract void clear();
 
     public abstract void remove(int index);
+
+    public abstract void sort();
+    public abstract void sort(Comparator<T> comparator);
 }
