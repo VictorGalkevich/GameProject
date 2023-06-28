@@ -4,7 +4,7 @@ import by.itstep.J1022.victorgalkevich.model.entities.abstractLayer.characters.N
 import by.itstep.J1022.victorgalkevich.model.entities.abstractLayer.characters.StrengthenerForNPC;
 
 public class Rage extends StrengthenerForNPC {
-    public Rage(NonPlayerCharacter nonPlayerCharacter){
+    public Rage(NonPlayerCharacter nonPlayerCharacter) {
         this.npc = nonPlayerCharacter;
         this.damage = 2 * npc.getDamage();
         this.healthPoints = npc.getHealthPoints();

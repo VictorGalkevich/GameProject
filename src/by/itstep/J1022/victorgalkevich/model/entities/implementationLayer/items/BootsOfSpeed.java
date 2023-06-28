@@ -11,7 +11,8 @@ public class BootsOfSpeed extends Boots {
         this.price = 450;
     }
 
-    private BootsOfSpeed(){}
+    private BootsOfSpeed() {
+    }
 
     @Override
     public String toString() {

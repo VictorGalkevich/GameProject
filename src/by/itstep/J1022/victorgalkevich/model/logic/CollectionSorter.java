@@ -13,33 +13,34 @@ import by.itstep.J1022.victorgalkevich.model.entities.abstractLayer.characters.N
 import by.itstep.J1022.victorgalkevich.model.entities.abstractLayer.characters.PlayerCharacter;
 
 public class CollectionSorter {
-    private CollectionSorter(){}
+    private CollectionSorter() {
+    }
 
-    public static void sortAscendingDamage(AbstractCharacterList<CharacterInGame> list){
+    public static void sortAscendingDamage(AbstractCharacterList<CharacterInGame> list) {
         list.sort(AscendingDamageComparator.getInstance());
     }
 
-    public static void sortAscendingMoveSpeed(AbstractCharacterList<CharacterInGame> list){
+    public static void sortAscendingMoveSpeed(AbstractCharacterList<CharacterInGame> list) {
         list.sort(AscendingMoveSpeedComparator.getInstance());
     }
 
-    public static void sortAscendingHealthPoints(AbstractCharacterList<CharacterInGame> list){
+    public static void sortAscendingHealthPoints(AbstractCharacterList<CharacterInGame> list) {
         list.sort(AscendingHealthPointsComparator.getInstance());
     }
 
-    public static void sortAscendingNetWorth(AbstractCharacterList<PlayerCharacter> list){
+    public static void sortAscendingNetWorth(AbstractCharacterList<PlayerCharacter> list) {
         list.sort(AscendingNetWorthComparator.getInstance());
     }
 
-    public static void sortDescendingNetWorth(AbstractCharacterList<PlayerCharacter> list){
+    public static void sortDescendingNetWorth(AbstractCharacterList<PlayerCharacter> list) {
         list.sort(DescendingNetWorthComparator.getInstance());
     }
 
-    public static void sortDescendingRespawnTime(AbstractCharacterList<NonPlayerCharacter> list){
+    public static void sortDescendingRespawnTime(AbstractCharacterList<NonPlayerCharacter> list) {
         list.sort(DescendingRespawnDelayComparator.getInstance());
     }
 
-    public static void sortAscendingRespawnTime(AbstractCharacterList<NonPlayerCharacter> list){
+    public static void sortAscendingRespawnTime(AbstractCharacterList<NonPlayerCharacter> list) {
         list.sort(AscendingRespawnDelayComparator.getInstance());
     }
 

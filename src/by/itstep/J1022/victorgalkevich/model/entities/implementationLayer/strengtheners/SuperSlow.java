@@ -4,7 +4,7 @@ import by.itstep.J1022.victorgalkevich.model.entities.abstractLayer.characters.N
 import by.itstep.J1022.victorgalkevich.model.entities.abstractLayer.characters.StrengthenerForNPC;
 
 public class SuperSlow extends StrengthenerForNPC {
-    public SuperSlow(NonPlayerCharacter nonPlayerCharacter){
+    public SuperSlow(NonPlayerCharacter nonPlayerCharacter) {
         this.npc = nonPlayerCharacter;
         this.damage = npc.getDamage();
         this.healthPoints = npc.getHealthPoints();

@@ -14,10 +14,12 @@ public abstract class PlayerCharacter extends CharacterInGame {
     protected int netWorth;
     protected Boots boots;
     protected Armor armor;
+
     {
         this.netWorth = 1000;
     }
-    protected PlayerCharacter(){
+
+    protected PlayerCharacter() {
         super();
     }
 
@@ -70,10 +72,10 @@ public abstract class PlayerCharacter extends CharacterInGame {
         builder.append("My net worth is ").append(netWorth).append(", I deal ").append(damage)
                 .append(" damage").append(", have ").append(moveSpeed).append(" move speed and ")
                 .append(healthPoints).append(" health points!\n");
-        if(armor != null){
+        if (armor != null) {
             builder.append("My armor is ").append(armor.toString()).append(". ");
         }
-        if(boots != null){
+        if (boots != null) {
             builder.append("My boots are ").append(boots.toString()).append(". ");
         }
         builder.append(behavior.fight());

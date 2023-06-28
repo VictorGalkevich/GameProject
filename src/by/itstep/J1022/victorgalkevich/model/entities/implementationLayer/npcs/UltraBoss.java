@@ -9,7 +9,10 @@ public class UltraBoss extends NonPlayerCharacter {
         this.damage = 230;
         this.respawnTimeSeconds = 180;
     }
-    public UltraBoss(){}
+
+    public UltraBoss() {
+    }
+
     @Override
     public String attack() {
         return "I'm shooting with my lasers!";

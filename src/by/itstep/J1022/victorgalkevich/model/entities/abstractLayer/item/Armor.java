@@ -23,6 +23,7 @@ public class Armor extends Item {
         return grantedHealthPoints;
     }
 
-    protected Armor() {}
+    protected Armor() {
+    }
 
 }

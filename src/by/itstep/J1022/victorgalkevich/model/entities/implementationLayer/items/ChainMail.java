@@ -15,7 +15,8 @@ public class ChainMail extends Armor {
         this.price = 700;
     }
 
-    private ChainMail(){}
+    private ChainMail() {
+    }
 
     public static ChainMail buyChainMail() {
         if (null == chainMail) {

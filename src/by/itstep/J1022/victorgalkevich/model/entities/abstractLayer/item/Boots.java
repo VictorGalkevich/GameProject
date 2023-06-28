@@ -2,10 +2,11 @@ package by.itstep.J1022.victorgalkevich.model.entities.abstractLayer.item;
 
 import java.util.Objects;
 
-public class Boots extends Item{
+public class Boots extends Item {
     protected int grantedMoveSpeed;
 
-    protected Boots(){}
+    protected Boots() {
+    }
 
     @Override
     public boolean equals(Object o) {

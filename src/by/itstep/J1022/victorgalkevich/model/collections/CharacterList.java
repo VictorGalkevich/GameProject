@@ -8,37 +8,42 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.Objects;
 
-public class CharacterList<T extends CharacterInGame> extends AbstractCharacterList<T>{
+public class CharacterList<T extends CharacterInGame> extends AbstractCharacterList<T> {
     private CharacterInGame[] list;
 
     private int size;
 
     private static int lastIndex;
+
     {
         this.size = 10;
         this.list = new CharacterInGame[size];
     }
-    public CharacterList(){}
+
+    public CharacterList() {
+    }
 
     public CharacterList(int size) {
         this.size = size;
         this.list = new CharacterInGame[size];
     }
-    static{
+
+    static {
         lastIndex = -1;
     }
+
     @Override
     public void add(T character) {
         lastIndex++;
-        if(lastIndex == size){
+        if (lastIndex == size) {
             size++;
             CharacterInGame[] newList = new CharacterInGame[size];
-            if (size - 1 >= 0){
+            if (size - 1 >= 0) {
                 System.arraycopy(list, 0, newList, 0, size - 1);
             }
             newList[lastIndex] = character;
             this.list = newList;
-        }else{
+        } else {
             list[lastIndex] = character;
         }
     }
@@ -96,7 +101,7 @@ public class CharacterList<T extends CharacterInGame> extends AbstractCharacterL
         return new InvisibleIterator();
     }
 
-    private class InvisibleIterator implements Iterator<T>{
+    private class InvisibleIterator implements Iterator<T> {
         int count = 0;
 
         @Override

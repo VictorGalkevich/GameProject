@@ -12,6 +12,7 @@ public abstract class CharacterInGame implements Serializable, Comparable<Charac
     protected int moveSpeed;
     protected int healthPoints;
     protected static Comparator comparator;
+
     static {
         comparator = AscendingDamageComparator.getInstance();
     }
@@ -25,7 +26,8 @@ public abstract class CharacterInGame implements Serializable, Comparable<Charac
         return comparator.compare(this, o);
     }
 
-    protected CharacterInGame(){}
+    protected CharacterInGame() {
+    }
 
     @Override
     public boolean equals(Object o) {

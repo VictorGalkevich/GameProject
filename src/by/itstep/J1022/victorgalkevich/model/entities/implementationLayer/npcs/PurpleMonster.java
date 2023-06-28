@@ -9,7 +9,9 @@ public class PurpleMonster extends NonPlayerCharacter {
         this.healthPoints = 300;
         this.respawnTimeSeconds = 5;
     }
-    public PurpleMonster(){}
+
+    public PurpleMonster() {
+    }
 
     @Override
     public String attack() {

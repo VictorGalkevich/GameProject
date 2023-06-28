@@ -1,6 +1,9 @@
 package by.itstep.J1022.victorgalkevich.model.benahior.interfaceLayer;
 
-public interface FightBehavior {
+import java.io.Serializable;
+
+public interface FightBehavior extends Serializable {
     String fight();
+
     int getDamage();
 }

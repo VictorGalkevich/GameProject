@@ -1,11 +1,13 @@
 package by.itstep.J1022.victorgalkevich.model.entities.abstractLayer.item;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Item {
+public class Item implements Serializable {
     protected int price;
 
-    protected Item(){}
+    protected Item() {
+    }
 
     public int getPrice() {
         return price;

@@ -1,6 +1,6 @@
 package by.itstep.J1022.victorgalkevich.model.exceptions;
 
-public class GameProjectException extends Throwable{
+public class GameProjectException extends Throwable {
     public GameProjectException() {
         super();
     }

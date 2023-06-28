@@ -7,15 +7,16 @@ import java.util.Comparator;
 public class AscendingDamageComparator implements Comparator<CharacterInGame> {
     private static AscendingDamageComparator comparator;
 
-    private AscendingDamageComparator(){}
+    private AscendingDamageComparator() {
+    }
 
     @Override
     public int compare(CharacterInGame o1, CharacterInGame o2) {
         return o1.getDamage() - o2.getDamage();
     }
 
-    public static AscendingDamageComparator getInstance(){
-        if(null == comparator){
+    public static AscendingDamageComparator getInstance() {
+        if (null == comparator) {
             comparator = new AscendingDamageComparator();
         }
         return comparator;

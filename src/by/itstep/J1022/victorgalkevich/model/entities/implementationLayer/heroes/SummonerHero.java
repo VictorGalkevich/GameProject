@@ -12,11 +12,13 @@ public class SummonerHero extends PlayerCharacter {
         this.behavior = new FightWithBears();
         this.damage = behavior.getDamage();
     }
-    public SummonerHero(){}
+
+    public SummonerHero() {
+    }
 
     @Override
     public void setBehavior(FightBehavior fightBehavior) {
-        if(fightBehavior instanceof FightWithSummons){
+        if (fightBehavior instanceof FightWithSummons) {
             this.damage = behavior.getDamage();
             this.behavior = fightBehavior;
         }
@@ -24,6 +26,6 @@ public class SummonerHero extends PlayerCharacter {
 
     @Override
     public String toString() {
-        return "I'm a summoner fighter. "  + super.toString();
+        return "I'm a summoner fighter. " + super.toString();
     }
 }

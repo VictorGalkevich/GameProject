@@ -9,7 +9,10 @@ public class AncientWizard extends NonPlayerCharacter {
         this.damage = 50;
         this.respawnTimeSeconds = 10;
     }
-    public AncientWizard(){}
+
+    public AncientWizard() {
+    }
+
     @Override
     public String attack() {
         return "I'm fighting with my magic staff";

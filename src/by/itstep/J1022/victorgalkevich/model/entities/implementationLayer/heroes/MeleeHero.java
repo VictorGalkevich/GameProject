@@ -12,11 +12,13 @@ public class MeleeHero extends PlayerCharacter {
         this.behavior = new FightWithIronSword();
         this.damage = behavior.getDamage();
     }
-    public MeleeHero(){}
+
+    public MeleeHero() {
+    }
 
     @Override
     public void setBehavior(FightBehavior fightBehavior) {
-        if(fightBehavior instanceof FightWithSword){
+        if (fightBehavior instanceof FightWithSword) {
             this.damage += behavior.getDamage();
             this.behavior = fightBehavior;
         }

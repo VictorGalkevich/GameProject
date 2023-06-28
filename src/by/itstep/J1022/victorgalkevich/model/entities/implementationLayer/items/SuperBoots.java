@@ -15,7 +15,8 @@ public class SuperBoots extends Boots {
         this.price = 2000;
     }
 
-    private SuperBoots(){}
+    private SuperBoots() {
+    }
 
     public static SuperBoots buyBoots() {
         if (null == boots) {

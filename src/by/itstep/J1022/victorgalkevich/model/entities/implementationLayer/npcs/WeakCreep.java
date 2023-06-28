@@ -9,7 +9,10 @@ public class WeakCreep extends NonPlayerCharacter {
         this.healthPoints = 120;
         this.respawnTimeSeconds = 2;
     }
-    public WeakCreep(){}
+
+    public WeakCreep() {
+    }
+
     @Override
     public String attack() {
         return "I'm fighting with a plastic sword!";

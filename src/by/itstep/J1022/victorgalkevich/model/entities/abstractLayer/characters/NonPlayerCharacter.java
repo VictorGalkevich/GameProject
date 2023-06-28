@@ -9,6 +9,7 @@ import java.util.Objects;
 
 public abstract class NonPlayerCharacter extends CharacterInGame {
     protected int respawnTimeSeconds;
+
     static {
         comparator = AscendingRespawnDelayComparator.getInstance();
     }
@@ -29,7 +30,7 @@ public abstract class NonPlayerCharacter extends CharacterInGame {
 
     @Override
     public void setComparator(Comparator comparator) {
-        if(comparator instanceof ComparatorForNPC){
+        if (comparator instanceof ComparatorForNPC) {
             super.setComparator(comparator);
         }
     }
@@ -39,7 +40,8 @@ public abstract class NonPlayerCharacter extends CharacterInGame {
         return super.compareTo(o);
     }
 
-    protected NonPlayerCharacter(){}
+    protected NonPlayerCharacter() {
+    }
 
     protected NonPlayerCharacter(NonPlayerCharacter character) {
         super(character.damage, character.moveSpeed, character.healthPoints);

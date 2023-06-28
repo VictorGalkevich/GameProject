@@ -15,7 +15,8 @@ public class StainlessArmor extends Armor {
         this.price = 1000;
     }
 
-    private StainlessArmor(){}
+    private StainlessArmor() {
+    }
 
     public static StainlessArmor buyArmor() {
         if (null == armor) {

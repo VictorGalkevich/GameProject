@@ -12,11 +12,13 @@ public class ArcherHero extends PlayerCharacter {
         this.behavior = new FightWithOakBow();
         this.damage = behavior.getDamage();
     }
-    public ArcherHero(){}
+
+    public ArcherHero() {
+    }
 
     @Override
-    public void setBehavior(FightBehavior fightBehavior){
-        if(fightBehavior instanceof FightWithBow){
+    public void setBehavior(FightBehavior fightBehavior) {
+        if (fightBehavior instanceof FightWithBow) {
             this.damage = behavior.getDamage();
             this.behavior = fightBehavior;
         }

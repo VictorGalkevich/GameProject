@@ -7,15 +7,16 @@ import java.util.Comparator;
 public class DescendingRespawnDelayComparator extends ComparatorForNPC {
     private static DescendingRespawnDelayComparator comparator;
 
-    private DescendingRespawnDelayComparator(){}
+    private DescendingRespawnDelayComparator() {
+    }
 
     @Override
     public int compare(NonPlayerCharacter o1, NonPlayerCharacter o2) {
         return o2.getRespawnTimeSeconds() - o1.getRespawnTimeSeconds();
     }
 
-    public static DescendingRespawnDelayComparator getInstance(){
-        if(null == comparator){
+    public static DescendingRespawnDelayComparator getInstance() {
+        if (null == comparator) {
             comparator = new DescendingRespawnDelayComparator();
         }
         return comparator;

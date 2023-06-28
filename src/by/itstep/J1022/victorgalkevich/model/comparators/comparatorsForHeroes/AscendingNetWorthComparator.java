@@ -4,18 +4,19 @@ import by.itstep.J1022.victorgalkevich.model.comparators.comparatorsForNPCs.Asce
 import by.itstep.J1022.victorgalkevich.model.entities.abstractLayer.characters.NonPlayerCharacter;
 import by.itstep.J1022.victorgalkevich.model.entities.abstractLayer.characters.PlayerCharacter;
 
-public class AscendingNetWorthComparator extends ComparatorForHeroes{
+public class AscendingNetWorthComparator extends ComparatorForHeroes {
     private static AscendingNetWorthComparator comparator;
 
-    private AscendingNetWorthComparator(){}
+    private AscendingNetWorthComparator() {
+    }
 
     @Override
     public int compare(PlayerCharacter o1, PlayerCharacter o2) {
         return o1.getNetWorth() - o2.getNetWorth();
     }
 
-    public static AscendingNetWorthComparator getInstance(){
-        if(null == comparator){
+    public static AscendingNetWorthComparator getInstance() {
+        if (null == comparator) {
             comparator = new AscendingNetWorthComparator();
         }
         return comparator;

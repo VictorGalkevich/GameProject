@@ -4,30 +4,67 @@ import by.itstep.J1022.victorgalkevich.model.collections.AbstractCharacterList;
 import by.itstep.J1022.victorgalkevich.model.entities.abstractLayer.characters.CharacterInGame;
 import by.itstep.J1022.victorgalkevich.model.entities.abstractLayer.characters.PlayerCharacter;
 
-public class CollectionFinder {
-    private CollectionFinder(){}
+import java.util.*;
 
-    public static PlayerCharacter findMaxNetWorth(AbstractCharacterList<CharacterInGame> collection){
-        int max = 1000; //1000 - the least Net worth for each player character
-        CharacterInGame resultHero = null;
-        for (CharacterInGame character : collection) {
-            if(character instanceof PlayerCharacter && ((PlayerCharacter) character).getNetWorth() > max){
-                max = ((PlayerCharacter) character).getNetWorth();
-                resultHero = character;
-            }
-        }
-        return (PlayerCharacter) resultHero;
+public class CollectionFinder {
+    private CollectionFinder() {
     }
 
-    public static PlayerCharacter findMinNetWorth(AbstractCharacterList<CharacterInGame> collection){
-        int min = Integer.MAX_VALUE; //Integer.MAX_VALUE - the highest Net worth for each player character
-        CharacterInGame resultHero = null;
-        for (CharacterInGame character : collection) {
-            if(character instanceof PlayerCharacter && ((PlayerCharacter) character).getNetWorth() < min){
-                min = ((PlayerCharacter) character).getNetWorth();
-                resultHero = character;
-            }
+    public static <T extends CharacterInGame & Comparable<CharacterInGame>> T min(AbstractCharacterList<? extends T> coll) {
+        Iterator<? extends T> i = coll.iterator();
+        T candidate = i.next();
+
+        while (i.hasNext()) {
+            T next = i.next();
+            if (next.compareTo(candidate) < 0)
+                candidate = next;
         }
-        return (PlayerCharacter) resultHero;
+        return candidate;
+    }
+
+    public static <T extends CharacterInGame & Comparable<CharacterInGame>> T min(AbstractCharacterList<? extends T> coll, Comparator<? super T> comp) {
+        if (comp == null)
+            return (T) min(coll);
+
+        Iterator<? extends T> i = coll.iterator();
+        T candidate = i.next();
+
+        while (i.hasNext()) {
+            T next = i.next();
+            if (comp.compare(next, candidate) < 0)
+                candidate = next;
+        }
+        return candidate;
+    }
+
+    public static <T extends CharacterInGame & Comparable<CharacterInGame>> T max(AbstractCharacterList<? extends T> coll) {
+        Iterator<? extends T> i = coll.iterator();
+        T candidate = i.next();
+
+        while (i.hasNext()) {
+            T next = i.next();
+            if (next.compareTo(candidate) > 0)
+                candidate = next;
+        }
+        return candidate;
+    }
+
+    public static <T extends CharacterInGame & Comparable<CharacterInGame>> T max(AbstractCharacterList<? extends T> coll, Comparator<? super T> comp) {
+        if (comp == null)
+            return (T) min(coll);
+
+        Iterator<? extends T> i = coll.iterator();
+        T candidate = i.next();
+
+        while (i.hasNext()) {
+            T next = i.next();
+            if (comp.compare(next, candidate) > 0)
+                candidate = next;
+        }
+        return candidate;
+    }
+
+    public static <T> int linearSearch(AbstractCharacterList<? extends Comparable<? super T>> list, T key) {
+        return 0;
     }
 }
