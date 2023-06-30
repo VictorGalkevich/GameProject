@@ -13,6 +13,10 @@ public class AncientWizard extends NonPlayerCharacter {
     public AncientWizard() {
     }
 
+    public AncientWizard(AncientWizard hero) {
+        super(hero);
+    }
+
     @Override
     public String attack() {
         return "I'm fighting with my magic staff";

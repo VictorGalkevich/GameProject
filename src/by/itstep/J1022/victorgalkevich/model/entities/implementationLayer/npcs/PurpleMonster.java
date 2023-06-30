@@ -13,6 +13,10 @@ public class PurpleMonster extends NonPlayerCharacter {
     public PurpleMonster() {
     }
 
+    public PurpleMonster(PurpleMonster hero) {
+        super(hero);
+    }
+
     @Override
     public String attack() {
         return "I'm fighting with big purple legs!";

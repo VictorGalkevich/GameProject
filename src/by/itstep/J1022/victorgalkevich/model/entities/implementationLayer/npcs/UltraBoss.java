@@ -13,6 +13,10 @@ public class UltraBoss extends NonPlayerCharacter {
     public UltraBoss() {
     }
 
+    public UltraBoss(UltraBoss hero) {
+        super(hero);
+    }
+
     @Override
     public String attack() {
         return "I'm shooting with my lasers!";

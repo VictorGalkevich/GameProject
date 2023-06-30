@@ -64,7 +64,14 @@ public class CollectionFinder {
         return candidate;
     }
 
-    public static <T> int linearSearch(AbstractCharacterList<? extends Comparable<? super T>> list, T key) {
-        return 0;
+    public static <T> int linearSearch(AbstractCharacterList<? extends Comparable<? super T>> list, T item) {
+        for (int i = 0; i < list.size(); i++) {
+            if (item != null && item.equals(list.get(i))){
+                return i;
+            } else if (item == null && item == list.get(i)) {
+                return i;
+            }
+        }
+        return -1;
     }
 }

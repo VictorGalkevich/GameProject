@@ -102,7 +102,20 @@ public class CharacterList<T extends CharacterInGame> extends AbstractCharacterL
     }
 
     private class InvisibleIterator implements Iterator<T> {
-        int count = 0;
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            InvisibleIterator that = (InvisibleIterator) o;
+            return count == that.count;
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(count);
+        }
+
+        private int count = 0;
 
         @Override
         public boolean hasNext() {

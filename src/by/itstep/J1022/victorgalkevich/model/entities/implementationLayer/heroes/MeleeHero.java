@@ -16,6 +16,10 @@ public class MeleeHero extends PlayerCharacter {
     public MeleeHero() {
     }
 
+    public MeleeHero(MeleeHero hero){
+        super(hero);
+    }
+
     @Override
     public void setBehavior(FightBehavior fightBehavior) {
         if (fightBehavior instanceof FightWithSword) {

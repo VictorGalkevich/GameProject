@@ -1,8 +1,9 @@
 package by.itstep.J1022.victorgalkevich.model.comparators.comparatorsForHeroes;
 
-import by.itstep.J1022.victorgalkevich.model.comparators.comparatorsForNPCs.AscendingRespawnDelayComparator;
-import by.itstep.J1022.victorgalkevich.model.entities.abstractLayer.characters.NonPlayerCharacter;
+import by.itstep.J1022.victorgalkevich.model.entities.abstractLayer.characters.CharacterInGame;
 import by.itstep.J1022.victorgalkevich.model.entities.abstractLayer.characters.PlayerCharacter;
+
+import java.util.Comparator;
 
 public class AscendingNetWorthComparator extends ComparatorForHeroes {
     private static AscendingNetWorthComparator comparator;
@@ -15,7 +16,7 @@ public class AscendingNetWorthComparator extends ComparatorForHeroes {
         return o1.getNetWorth() - o2.getNetWorth();
     }
 
-    public static AscendingNetWorthComparator getInstance() {
+    public static Comparator<CharacterInGame> getInstance() {
         if (null == comparator) {
             comparator = new AscendingNetWorthComparator();
         }

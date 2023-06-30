@@ -16,6 +16,10 @@ public class SummonerHero extends PlayerCharacter {
     public SummonerHero() {
     }
 
+    public SummonerHero(SummonerHero hero){
+        super(hero);
+    }
+
     @Override
     public void setBehavior(FightBehavior fightBehavior) {
         if (fightBehavior instanceof FightWithSummons) {

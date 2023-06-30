@@ -16,6 +16,10 @@ public class ArcherHero extends PlayerCharacter {
     public ArcherHero() {
     }
 
+    public ArcherHero(ArcherHero hero){
+        super(hero);
+    }
+
     @Override
     public void setBehavior(FightBehavior fightBehavior) {
         if (fightBehavior instanceof FightWithBow) {

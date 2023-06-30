@@ -29,7 +29,7 @@ public abstract class NonPlayerCharacter extends CharacterInGame {
     }
 
     @Override
-    public void setComparator(Comparator comparator) {
+    public void setComparator(Comparator<CharacterInGame> comparator) {
         if (comparator instanceof ComparatorForNPC) {
             super.setComparator(comparator);
         }

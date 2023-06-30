@@ -27,21 +27,4 @@ public class CollectionSorter {
     public static void sortAscendingHealthPoints(AbstractCharacterList<CharacterInGame> list) {
         list.sort(AscendingHealthPointsComparator.getInstance());
     }
-
-    public static void sortAscendingNetWorth(AbstractCharacterList<PlayerCharacter> list) {
-        list.sort(AscendingNetWorthComparator.getInstance());
-    }
-
-    public static void sortDescendingNetWorth(AbstractCharacterList<PlayerCharacter> list) {
-        list.sort(DescendingNetWorthComparator.getInstance());
-    }
-
-    public static void sortDescendingRespawnTime(AbstractCharacterList<NonPlayerCharacter> list) {
-        list.sort(DescendingRespawnDelayComparator.getInstance());
-    }
-
-    public static void sortAscendingRespawnTime(AbstractCharacterList<NonPlayerCharacter> list) {
-        list.sort(AscendingRespawnDelayComparator.getInstance());
-    }
-
 }

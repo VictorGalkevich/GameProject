@@ -13,6 +13,10 @@ public class WeakCreep extends NonPlayerCharacter {
     public WeakCreep() {
     }
 
+    public WeakCreep(WeakCreep hero) {
+        super(hero);
+    }
+
     @Override
     public String attack() {
         return "I'm fighting with a plastic sword!";

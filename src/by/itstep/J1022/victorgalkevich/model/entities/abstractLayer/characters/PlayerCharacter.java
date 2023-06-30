@@ -1,7 +1,9 @@
 package by.itstep.J1022.victorgalkevich.model.entities.abstractLayer.characters;
 
 import by.itstep.J1022.victorgalkevich.model.benahior.interfaceLayer.FightBehavior;
+import by.itstep.J1022.victorgalkevich.model.comparators.comparatorsForHeroes.AscendingNetWorthComparator;
 import by.itstep.J1022.victorgalkevich.model.comparators.comparatorsForHeroes.ComparatorForHeroes;
+import by.itstep.J1022.victorgalkevich.model.comparators.defaultComparators.AscendingDamageComparator;
 import by.itstep.J1022.victorgalkevich.model.entities.abstractLayer.item.Armor;
 import by.itstep.J1022.victorgalkevich.model.entities.abstractLayer.item.Boots;
 import org.jetbrains.annotations.NotNull;
@@ -15,12 +17,31 @@ public abstract class PlayerCharacter extends CharacterInGame {
     protected Boots boots;
     protected Armor armor;
 
+    private static int amountOfHeroes;
+
     {
         this.netWorth = 1000;
     }
 
+    public FightBehavior getBehavior() {
+        return behavior;
+    }
+
+    public Boots getBoots() {
+        return boots;
+    }
+
+    public Armor getArmor() {
+        return armor;
+    }
+
+    static {
+        comparator = AscendingNetWorthComparator.getInstance();
+    }
+
     protected PlayerCharacter() {
         super();
+        amountOfHeroes++;
     }
 
     public int getNetWorth() {
@@ -28,7 +49,7 @@ public abstract class PlayerCharacter extends CharacterInGame {
     }
 
     @Override
-    public void setComparator(Comparator comparator) {
+    public void setComparator(Comparator<CharacterInGame> comparator) {
         if (comparator instanceof ComparatorForHeroes) {
             super.setComparator(comparator);
         }
@@ -59,6 +80,7 @@ public abstract class PlayerCharacter extends CharacterInGame {
         this.boots = character.boots;
         this.armor = character.armor;
         this.behavior = character.behavior;
+        amountOfHeroes++;
     }
 
     @Override

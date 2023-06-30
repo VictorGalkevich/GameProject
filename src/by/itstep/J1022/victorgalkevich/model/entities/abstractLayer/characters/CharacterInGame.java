@@ -11,13 +11,13 @@ public abstract class CharacterInGame implements Serializable, Comparable<Charac
     protected int damage;
     protected int moveSpeed;
     protected int healthPoints;
-    protected static Comparator comparator;
-
+    protected static Comparator<CharacterInGame> comparator;
+    private static int amountOfInstances;
     static {
         comparator = AscendingDamageComparator.getInstance();
     }
 
-    public void setComparator(Comparator comparator) {
+    public void setComparator(Comparator<CharacterInGame> comparator) {
         CharacterInGame.comparator = comparator;
     }
 
@@ -27,6 +27,7 @@ public abstract class CharacterInGame implements Serializable, Comparable<Charac
     }
 
     protected CharacterInGame() {
+        amountOfInstances++;
     }
 
     @Override
@@ -42,10 +43,15 @@ public abstract class CharacterInGame implements Serializable, Comparable<Charac
         return Objects.hash(damage, moveSpeed, healthPoints);
     }
 
+    public static int getAmountOfInstances() {
+        return amountOfInstances;
+    }
+
     protected CharacterInGame(int damage, int moveSpeed, int healthPoints) {
         this.damage = damage;
         this.moveSpeed = moveSpeed;
         this.healthPoints = healthPoints;
+        amountOfInstances++;
     }
 
     public abstract String attack();
