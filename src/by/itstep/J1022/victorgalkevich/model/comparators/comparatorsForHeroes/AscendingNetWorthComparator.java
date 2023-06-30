@@ -12,8 +12,8 @@ public class AscendingNetWorthComparator extends ComparatorForHeroes {
     }
 
     @Override
-    public int compare(PlayerCharacter o1, PlayerCharacter o2) {
-        return o1.getNetWorth() - o2.getNetWorth();
+    public int compare(CharacterInGame o1, CharacterInGame o2) {
+        return(((PlayerCharacter) o1).getNetWorth() - ((PlayerCharacter) o2).getNetWorth());
     }
 
     public static Comparator<CharacterInGame> getInstance() {

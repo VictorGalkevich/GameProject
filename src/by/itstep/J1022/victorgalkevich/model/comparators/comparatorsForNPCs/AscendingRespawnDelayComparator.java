@@ -1,5 +1,6 @@
 package by.itstep.J1022.victorgalkevich.model.comparators.comparatorsForNPCs;
 
+import by.itstep.J1022.victorgalkevich.model.entities.abstractLayer.characters.CharacterInGame;
 import by.itstep.J1022.victorgalkevich.model.entities.abstractLayer.characters.NonPlayerCharacter;
 
 import java.util.Comparator;
@@ -11,8 +12,8 @@ public class AscendingRespawnDelayComparator extends ComparatorForNPC {
     }
 
     @Override
-    public int compare(NonPlayerCharacter o1, NonPlayerCharacter o2) {
-        return o1.getRespawnTimeSeconds() - o2.getRespawnTimeSeconds();
+    public int compare(CharacterInGame o1, CharacterInGame o2) {
+        return ((NonPlayerCharacter) o1).getRespawnTimeSeconds() - ((NonPlayerCharacter) o2).getRespawnTimeSeconds();
     }
 
     public static AscendingRespawnDelayComparator getInstance() {
