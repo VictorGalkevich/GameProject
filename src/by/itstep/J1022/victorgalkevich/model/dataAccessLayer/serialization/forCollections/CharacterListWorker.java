@@ -1,4 +1,4 @@
-package by.itstep.J1022.victorgalkevich.model.dataAccessLayer.forCollections;
+package by.itstep.J1022.victorgalkevich.model.dataAccessLayer.serialization.forCollections;
 
 import by.itstep.J1022.victorgalkevich.model.collections.CharacterList;
 import by.itstep.J1022.victorgalkevich.model.exceptions.technicalExceptions.serializationExceptions.CollectionDeserializationException;

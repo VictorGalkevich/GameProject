@@ -1,4 +1,4 @@
-package by.itstep.J1022.victorgalkevich.model.dataAccessLayer.forEntities;
+package by.itstep.J1022.victorgalkevich.model.dataAccessLayer.serialization.forEntities;
 
 import by.itstep.J1022.victorgalkevich.model.entities.abstractLayer.characters.CharacterInGame;
 import by.itstep.J1022.victorgalkevich.model.exceptions.technicalExceptions.serializationExceptions.CharacterDeserializationException;
