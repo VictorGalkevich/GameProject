@@ -13,6 +13,7 @@ import java.util.Objects;
 
 public abstract class PlayerCharacter extends CharacterInGame {
     protected FightBehavior behavior;
+    private int id;
     protected int netWorth;
     protected Boots boots;
     protected Armor armor;
@@ -42,6 +43,7 @@ public abstract class PlayerCharacter extends CharacterInGame {
     protected PlayerCharacter() {
         super();
         amountOfHeroes++;
+        this.id = amountOfHeroes + 123;
     }
 
     public int getNetWorth() {
@@ -74,6 +76,10 @@ public abstract class PlayerCharacter extends CharacterInGame {
         return Objects.hash(super.hashCode(), behavior, netWorth, boots, armor);
     }
 
+    public int getId() {
+        return id;
+    }
+
     protected PlayerCharacter(PlayerCharacter character) {
         super(character.damage, character.moveSpeed, character.healthPoints);
         this.netWorth = character.netWorth;
@@ -81,6 +87,7 @@ public abstract class PlayerCharacter extends CharacterInGame {
         this.armor = character.armor;
         this.behavior = character.behavior;
         amountOfHeroes++;
+        this.id = amountOfHeroes + 123;
     }
 
     @Override

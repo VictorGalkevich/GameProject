@@ -9,6 +9,15 @@ import java.util.Objects;
 
 public abstract class NonPlayerCharacter extends CharacterInGame {
     protected int respawnTimeSeconds;
+    private static int amountOfNPCS;
+
+    private int id;
+    public NonPlayerCharacter(int damage, int moveSpeed, int healthPoints, int respawnTimeSeconds) {
+        super(damage, moveSpeed, healthPoints);
+        this.respawnTimeSeconds = respawnTimeSeconds;
+        amountOfNPCS++;
+        id = amountOfNPCS + 123;
+    }
 
     static {
         comparator = AscendingRespawnDelayComparator.getInstance();
@@ -41,11 +50,19 @@ public abstract class NonPlayerCharacter extends CharacterInGame {
     }
 
     protected NonPlayerCharacter() {
+        amountOfNPCS++;
+        this.id = amountOfNPCS + 123;
+    }
+
+    public int getId() {
+        return id;
     }
 
     protected NonPlayerCharacter(NonPlayerCharacter character) {
         super(character.damage, character.moveSpeed, character.healthPoints);
         this.respawnTimeSeconds = character.respawnTimeSeconds;
+        amountOfNPCS++;
+        this.id = amountOfNPCS + 123;
     }
 
     public int getRespawnTimeSeconds() {

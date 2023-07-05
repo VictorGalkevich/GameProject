@@ -13,10 +13,10 @@ public class CharacterList<T extends CharacterInGame> extends AbstractCharacterL
 
     private int size;
 
-    private static int lastIndex;
+    private int lastIndex;
 
     {
-        this.size = 10;
+        this.size = 0;
         this.list = new CharacterInGame[size];
     }
 
@@ -28,7 +28,7 @@ public class CharacterList<T extends CharacterInGame> extends AbstractCharacterL
         this.list = new CharacterInGame[size];
     }
 
-    static {
+    {
         lastIndex = -1;
     }
 

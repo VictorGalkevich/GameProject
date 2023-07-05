@@ -11,10 +11,16 @@ public class UserInterface {
     }
 
     public static <T extends CharacterInGame> void show(AbstractCharacterList<T> arg){
-        StringBuilder builder = new StringBuilder();
-        for (int i = 0; i < arg.size(); i++) {
-            builder.append("Member number ").append(i + 1).append("\n").append(arg.get(i)).append("\n\n");
+        if (arg != null && !arg.isEmpty()){
+            StringBuilder builder = new StringBuilder();
+            for (int i = 0; i < arg.size(); i++) {
+                builder.append("Member number ").append(i + 1).append("\n").append(arg.get(i)).append("\n\n");
+            }
+            System.out.println(builder);
+        }else if (arg == null){
+            System.out.println("null Collection");
+        }else {
+            System.out.println("Collection is Empty");
         }
-        System.out.println(builder);
     }
 }
